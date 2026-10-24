@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Sebaran Budaya Kabupaten Purbalingga - Jawa Banyumasan</title>
+    <style>
+        :root {
+            --primary: #8b0000;         /* Merah Marun / Kebudayaan Jawa */
+            --primary-hover: #6b0000;
+            --secondary: #d4af37;       /* Emas / Prada */
+            --secondary-dark: #aa8620;
+            --bg: #f5f0e6;              /* Krem Klasik / Papirus */
+            --card-bg: rgba(255, 253, 249, 0.95); /* Sedikit transparan agar motif wayang di belakang berbayang halus */
+            --text: #2b231d;            /* Cokelat Kayu Tua */
+            --border-jawa: #c8b28a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            /* LATAR BELAKANG WAYANG PALING BELAKANG */
+            background-image: 
+                linear-gradient(rgba(245, 240, 230, 0.88), rgba(245, 240, 230, 0.88)), 
+                url('WAYANG.jpg'); /* Bisa diganti dengan gambar wayang lokal kamu, ex: 'wayang-bg.jpg' */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Tetap di tempat saat di-scroll */
+            
+        }
+
+        header {
+            background: linear-gradient(rgba(55, 0, 0, 0.85), rgba(100, 0, 0, 0.88)), url('SLAMET.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--secondary);
+            text-align: center;
+            padding: 4.5rem 1rem 3.5rem;
+            border-bottom: 5px solid var(--secondary);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .header-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #f3e5ab;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+        }
+
+        header p.tagline {
+            color: #f7eede;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .jawa-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .jawa-divider::before, .jawa-divider::after {
+            content: "";
+            height: 2px;
+            width: 80px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 16px rgba(80, 50, 20, 0.12);
+            border: 1px solid var(--border-jawa);
+            border-top: 5px solid var(--primary);
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-family: 'Palatino Linotype', serif;
+            font-size: 1.6rem;
+            border-bottom: 2px dashed var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "ꦧꦸꦢꦪ";
+            font-size: 1rem;
+            color: var(--secondary-dark);
+            background: #f0e6d2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-jawa);
+        }
+
+        .map-box {
+            width: 100%;
+            background: #eae2d0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px double var(--secondary);
+            margin-top: 15px;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .map-box img {
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .district-btn {
+            background: #fcf9f2;
+            border: 1px solid var(--border-jawa);
+            padding: 14px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: var(--primary);
+            transition: all 0.25s ease;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .district-btn::after {
+            content: "ꦏꦼꦕꦩꦠꦤ꧀";
+            position: absolute;
+            right: 10px;
+            bottom: 4px;
+            font-size: 0.65rem;
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        .district-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(139, 0, 0, 0.25);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 10, 5, 0.75);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fffdf8;
+            width: 100%;
+            max-width: 850px;
+            border-radius: 6px;
+            padding: 30px;
+            border: 3px double var(--secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin: 0;
+            font-family: 'Palatino Linotype', serif;
+        }
+
+        .close-btn {
+            background: var(--primary);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .modal-body {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .modal-left {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .modal-right {
+            flex: 1;
+            min-width: 230px;
+            background: #f7f1e3;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-jawa);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .btn-next {
+            display: block;
+            background: var(--primary);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+
+        .btn-next:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .music-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            padding: 10px 18px;
+            border-radius: 30px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .music-btn {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: transform 0.15s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.06);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1c1510;
+            color: #d4af37;
+            margin-top: 50px;
+            border-top: 3px solid var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .modal-body {
+                flex-direction: column;
+            }
+            .music-widget {
+                bottom: 12px;
+                right: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-subtitle">Sugeng Rawuh Wonten ing Portal Kebudayaan</div>
+        <h1>Persebaran Budaya Kabupaten Purbalingga</h1>
+        <div class="jawa-divider">꧁ ꦥꦸꦂꦧꦭꦶꦁꦒ ꧂</div>
+        <p class="tagline">Nilai Sejarah, Tradisi, lan Warisan Kesenian ing 18 Kecamatan Banyumasan</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Pengertian & Sejarah Singkat -->
+        <div class="section-card">
+            <h2 class="section-title">Prakata lan Sejarah Purbalingga</h2>
+            <p><strong>Kabupaten Purbalingga</strong> inggih punika salah setunggalin wilayah ing Provinsi Jawa Tengah. Dumunung ing antarane cekungan Pegunungan Serayu lan lereng Gunung Slamet ing sisih lor, Purbalingga nggadhahi kasugihan tradisi, kesenian rakyat, serta warisan sejarah budaya Jawa Banyumasan ingkang khas lan adiluhung.</p>
+            <br>
+            <p><strong>Sejarah Singkat:</strong> Hari Jadi Kabupaten Purbalingga katetepaken tanggal 18 Desember 1730. Sejarah wilayah punika mboten saged dipunpisahaken saking labuh labuh Kyai Arsantaka (Kyai Jamur) lan putranipun, Kyai Yudo Nagaro (Adipati Karo) ingkang katetepaken dados Adipati Kapisan Purbalingga dening Sunan Pakubuwono II. Budaya Purbalingga ngrembaka saking sintesis ajaran lokal, nilai keagamaan, lan karakter msyarakat Banyumasan ingkang blaka suta (cablaka).</p>
+        </div>
+
+        <!-- 2. Peta Purbalingga -->
+        <div class="section-card">
+            <h2 class="section-title">Peta Wilayah Kebudayaan</h2>
+            <p>Peta administratif lan persebaran wewengkon kebudayaan Kabupaten Purbalingga:</p>
+            <div class="map-box">
+                <img src="kec di purbalingga.jpg" alt="Peta Kecamatan Purbalingga">
+            </div>
+        </div>
+
+        <!-- 3. Daftar 18 Kecamatan -->
+        <div class="section-card">
+            <h2 class="section-title">Daftar 18 Kecamatan</h2>
+            <p>Pilih nama kecamatan ing andhap punika kangge maos sejarah lan deskripsi kebudayaannipun:</p>
+
+            <div class="district-grid">
+                <button class="district-btn" onclick="openDetail('Kemangkon')">1. Kemangkon</button>
+                <button class="district-btn" onclick="openDetail('Bukateja')">2. Bukateja</button>
+                <button class="district-btn" onclick="openDetail('Kejobong')">3. Kejobong</button>
+                <button class="district-btn" onclick="openDetail('Kaligondang')">4. Kaligondang</button>
+                <button class="district-btn" onclick="openDetail('Purbalingga')">5. Purbalingga</button>
+                <button class="district-btn" onclick="openDetail('Kalimanah')">6. Kalimanah</button>
+                <button class="district-btn" onclick="openDetail('Kutasari')">7. Kutasari</button>
+                <button class="district-btn" onclick="openDetail('Mrebet')">8. Mrebet</button>
+                <button class="district-btn" onclick="openDetail('Bobotsari')">9. Bobotsari</button>
+                <button class="district-btn" onclick="openDetail('Karangreja')">10. Karangreja</button>
+                <button class="district-btn" onclick="openDetail('Karanganyar')">11. Karanganyar</button>
+                <button class="district-btn" onclick="openDetail('Karangmoncol')">12. Karangmoncol</button>
+                <button class="district-btn" onclick="openDetail('Rembang')">13. Rembang</button>
+                <button class="district-btn" onclick="openDetail('Bojongsari')">14. Bojongsari</button>
+                <button class="district-btn" onclick="openDetail('Padamara')">15. Padamara</button>
+                <button class="district-btn" onclick="openDetail('Pengadegan')">16. Pengadegan</button>
+                <button class="district-btn" onclick="openDetail('Karangjambu')">17. Karangjambu</button>
+                <button class="district-btn" onclick="openDetail('Kertanegara')">18. Kertanegara</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Detail Kecamatan -->
+    <div id="districtModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Kecamatan</h3>
+                <button class="close-btn" onclick="closeDetail()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <h4 style="color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--border-jawa); padding-bottom: 4px;">Sejarah & Mitos Tradisi Wilayah</h4>
+                    <p id="modalDesc">Deskripsi akan muncul di sini.</p>
+                </div>
+
+                <div class="modal-right">
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 8px;">Jelajah Luwih Lanjut</h4>
+                        <p style="font-size: 0.88rem; color: #555;">Eksplorasi dokumentasi, kesenian khas, lan dongeng sejarah saking wewengkon punika.</p>
+                    </div>
+                    <a id="modalLink" href="#" class="btn-next">Lanjutaken Jelajah →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PEMUTAR MUSIK GAMELAN JAWA -->
+    <div class="music-widget">
+        <span>🪕 Gamelan Jawa</span>
+        <audio id="gamelanAudio" loop src="Gending Temanten Adat Jawa kebo giro.mp3"></audio>
+        <button id="gamelanBtn" class="music-btn" onclick="toggleGamelan()">▶️ Bunyikan</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Website Edukasi & Pelestarian Kebudayaan Purbalingga | Jawa Banyumasan</p>
+    </footer>
+
+    <script>
+        const audio = document.getElementById("gamelanAudio");
+        const btn = document.getElementById("gamelanBtn");
+
+        function toggleGamelan() {
+            if (audio.paused) {
+                audio.play();
+                btn.innerText = "⏸️ Hentikan";
+            } else {
+                audio.pause();
+                btn.innerText = "▶️ Bunyikan";
+            }
+        }
+
+        const dataKecamatan = {
+            'Kemangkon': {
+                desc: 'Kemangkon dununge ing sisih kidul Purbalingga kang wewatesan langsung karo Kali Serayu lan Klawing. Dikenal nduweni jejak sejarah penting babagan transportasi banyu kuno (dermaga pendaratan) lan tradisi pertanian pinggir kali.',
+                link: 'kemangkon.html'
+            },
+            'Bukateja': {
+                desc: 'Bukateja minangka wilayah strategis sisih wetan Purbalingga. Sugih peninggalan situs arkeologi prasejarah lan Hindu-Buddha, sarta tradisi kesenian Ebeg (Kuda Lumping) sing kawentar.',
+                link: 'bukateja.html'
+            },
+            'Kejobong': {
+                desc: 'Kejobong dikenal karo artefak watu prasejarah (situs perbengkelan batu paleolitikum). Secara kabudayan, masyarakatipun nguri-uri tradisi Ruwat Bumi lan kesenian rakyat.',
+                link: 'kejobong.html'
+            },
+            'Kaligondang': {
+                desc: 'Kaligondang nyimpen sejarah penting babagan perkembangan para bangsawan lokal abad ke-18. Sentra kesenian Banyumasan kayata Begalan lan Lengger tumuwuh subur ing papan iki.',
+                link: 'kaligondang.html'
+            },
+            'Purbalingga': {
+                desc: 'Pusat pemerintahan lan jantung sejarah Kabupaten Purbalingga. Ing kene mapan Alun-alun, Pendopo Dipokusumo, lan Masjid Agung Darussalam minangka pilar kebudayaan kota.',
+                link: 'purbalingga.html'
+            },
+            'Kalimanah': {
+                desc: 'Kecamatan penyangga kulon Purbalingga sing sugih warisan kuliner tradisional lan tradisi keagamaan masyarakat pedesaan sing kenthel.',
+                link: 'kalimanah.html'
+            },
+            'Kutasari': {
+                desc: 'Mapan ing sikile Gunung Slamet, Kutasari sugih potensi kebudayaan berbasis alam, tuk suci (mata air kuno), lan tradisi pertunjukan wayang kulit.',
+                link: 'kutasari.html'
+            },
+            'Mrebet': {
+                desc: 'Mrebet minangka pancer bersejarah penyebaran agama Islam wiwitan ing Purbalingga. Terdapat makam-makam wali lokal lan tradisi ziarah kultural.',
+                link: 'mrebet.html'
+            },
+            'Bobotsari': {
+                desc: 'Pusat perdagangan sisih lor sing bersejarah wiwit jaman kolonial, nyambungake jalur kebudayaan pesisir lan wilayah gunung.',
+                link: 'bobotsari.html'
+            },
+            'Karangreja': {
+                desc: 'Kecamatan dataran tinggi Gunung Slamet kanthi tradisi pertanian pegunungan lan ritual adat Sedekah Gunung lan Petik Hasil Bumi.',
+                link: 'karangreja.html'
+            },
+            'Karanganyar': {
+                desc: 'Wilayah kanthi tradisi kerajinan rakyat, nggawe alat pertanian lokal, lan pertunjukan kesenian bambu kayata Calung lan Angklung.',
+                link: 'karanganyar.html'
+            },
+            'Karangmoncol': {
+                desc: 'Kondhang amarga Desa Wisata lan peninggalan sejarah lokal babagan tempat pertapaan tokoh-tokoh Jawa jaman kuno.',
+                link: 'karangmoncol.html'
+            },
+            'Rembang': {
+                desc: 'Wilayah bersejarah panggonan miyos Pahlawan Nasional Jenderal Soedirman (Monumen Tempat Lahir Panglima Besar Jenderal Soedirman ing Bodaskarangjati).',
+                link: 'rembang.html'
+            },
+            'Bojongsari': {
+                desc: 'Kecamatan sing sugih sumber mata air alami lan objek wisata alam berbasis pelestarian ekosistem lan budaya banyu.',
+                link: 'bojongsari.html'
+            },
+            'Padamara': {
+                desc: 'Dikenal minangka sentra industri kerajinan patung, sapu glagah, lan warisan seni pertunjukan tradisional Banyumasan.',
+                link: 'padamara.html'
+            },
+            'Pengadegan': {
+                desc: 'Kecamatan kanthi latar perbukitan sing nduweni tradisi lisan, dongeng rakyat, sarta kearifan lokal pertanian lahan garing.',
+                link: 'pengadegan.html'
+            },
+            'Karangjambu': {
+                desc: 'Kecamatan ing perbatasan lor kanthi topografi pegunungan, sugih kearifan lokal lan tatanan sosial masyarakat lereng gunung.',
+                link: 'karangjambu.html'
+            },
+            'Kertanegara': {
+                desc: 'Wilayah pemekaran sing nggegegem kenceng tradisi gotong royong warga sarta pelestarian seni tradisional Calung lan Lengger.',
+                link: 'kertanegara.html'
+            }
+        };
+
+        function openDetail(namaKecamatan) {
+            const data = dataKecamatan[namaKecamatan] || {
+                desc: 'Deskripsi lan sejarah wewengkon ' + namaKecamatan + ' saweg dipunrampiyungi.',
+                link: '#'
+            };
+
+            document.getElementById('modalTitle').innerText = 'Kecamatan ' + namaKecamatan;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalLink').href = data.link;
+
+            document.getElementById('districtModal').classList.add('active');
+        }
+
+        function closeDetail() {
+            document.getElementById('districtModal').classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('districtModal');
+            if (event.target === modal) {
+                closeDetail();
+            }
+        };
+    </script>
+
+</body>
+</html>
