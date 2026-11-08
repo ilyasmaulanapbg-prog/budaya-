@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monografi Sejarah & Kebudayaan Kecamatan Pengadegan</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b0000;         /* Merah Marun Kebudayaan Jawa */
+            --primary-hover: #6b0000;
+            --secondary: #d4af37;       /* Emas / Prada */
+            --secondary-dark: #aa8620;
+            --bg: #f5f0e6;              /* Krem Papirus Klasik */
+            --card-bg: rgba(255, 253, 249, 0.96);
+            --text: #2b231d;            /* Cokelat Kayu Tua */
+            --border-jawa: #c8b28a;
+            --header-overlay-1: rgba(55, 0, 0, 0.88);
+            --header-overlay-2: rgba(100, 0, 0, 0.92);
+            --tab-active-bg: linear-gradient(135deg, #8b0000 0%, #5a0000 100%);
+            --tab-active-color: #f3e5ab;
+            --shadow: 0 10px 30px rgba(80, 50, 20, 0.15);
+        }
+        /* --- MODE GELAP (DARK MODE) --- */
+        body.dark-mode {
+            --bg: #12100e;
+            --card-bg: rgba(24, 20, 16, 0.96);
+            --text: #f0e6d2;
+            --border-jawa: #5c4a32;
+            --primary: #c94040;
+            --primary-hover: #a83232;
+            --secondary: #e5c357;
+            --secondary-dark: #b89735;
+            --header-overlay-1: rgba(20, 5, 5, 0.92);
+            --header-overlay-2: rgba(40, 10, 10, 0.95);
+            --tab-active-bg: linear-gradient(135deg, #c94040 0%, #802020 100%);
+            --tab-active-color: #fff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        /* --- MODE BACA (READING MODE) --- */
+        body.reading-mode {
+            font-size: 1.18rem;
+            line-height: 2.2;
+        }
+        body.reading-mode .tab-pane p {
+            font-size: 1.18rem;
+            letter-spacing: 0.4px;
+        }
+        body.reading-mode .container {
+            max-width: 1000px;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', Georgia, serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            background-image: 
+                linear-gradient(rgba(245, 240, 230, 0.92), rgba(245, 240, 230, 0.92)), 
+                url('WAYANG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        body.dark-mode {
+            background-image: 
+                linear-gradient(rgba(18, 16, 14, 0.95), rgba(18, 16, 14, 0.95)), 
+                url('WAYANG.jpg');
+        }
+        /* HEADER MEWAH */
+        header {
+            background: linear-gradient(var(--header-overlay-1), var(--header-overlay-2)), url('SLAMET.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--secondary);
+            text-align: center;
+            padding: 5rem 1rem 4rem;
+            border-bottom: 6px solid var(--secondary);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        .header-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #f3e5ab;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            margin-bottom: 12px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 1px;
+        }
+        header p.tagline {
+            color: #f7eede;
+            font-size: 1.15rem;
+            font-style: italic;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .jawa-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+        .jawa-divider::before, .jawa-divider::after {
+            content: "";
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+        }
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* NAVIGASI ATAS DENGAN POSISI LANGSUNG DI KANAN/KIRI */
+        .back-nav-bar {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .back-btn {
+            background: linear-gradient(135deg, #8b0000 0%, #5a0000 100%);
+            color: #f3e5ab;
+            border: 2px solid var(--secondary);
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+        }
+        .top-controls-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-control-btn {
+            background: var(--card-bg);
+            color: var(--text);
+            border: 1.5px solid var(--border-jawa);
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .nav-control-btn:hover {
+            border-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        /* TAB CONTAINER & HEADERS */
+        .tab-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 2px solid var(--border-jawa);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 50px;
+            backdrop-filter: blur(4px);
+        }
+        .tab-headers {
+            display: flex;
+            background: rgba(200, 178, 138, 0.25);
+            border-bottom: 3px solid var(--secondary);
+            overflow-x: auto;
+        }
+        body.dark-mode .tab-headers {
+            background: rgba(30, 24, 18, 0.8);
+        }
+        .tab-btn {
+            flex: 1;
+            min-width: 160px;
+            padding: 18px 20px;
+            background: transparent;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--text);
+            cursor: pointer;
+            text-align: center;
+            border-right: 1px solid var(--border-jawa);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .tab-btn:hover {
+            background: rgba(139, 0, 0, 0.12);
+            color: var(--primary);
+        }
+        .tab-btn.active {
+            background: var(--tab-active-bg);
+            color: var(--tab-active-color);
+            border-bottom: none;
+            box-shadow: inset 0 4px 0 var(--secondary);
+        }
+        .tab-content-area {
+            padding: 45px;
+        }
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* TIPOGRAFI & SEKSI */
+        .section-title-alt {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            border-bottom: 2px dashed var(--secondary);
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .section-title-alt::before {
+            content: "ꦥꦼꦔꦢꦼꦒꦤ꧀";
+            font-size: 1.05rem;
+            color: var(--secondary-dark);
+            background: #f0e6d2;
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-jawa);
+            letter-spacing: 2px;
+        }
+        body.dark-mode .section-title-alt::before {
+            background: #2a2218;
+            color: var(--secondary);
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        /* --- LAYOUT MODERN: VIDEO DI DISAMPING PENJELASAN (GRID 2-KOLOM) --- */
+        .video-narrative-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 25px;
+            align-items: start;
+            margin: 25px 0 35px 0;
+            background: rgba(212, 175, 55, 0.06);
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border-jawa);
+        }
+        .video-container-modern {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            border: 2px solid var(--secondary);
+        }
+        .video-container-modern iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .narrative-side-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .narrative-side-box h4 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--border-jawa);
+            padding-bottom: 6px;
+        }
+        body.dark-mode .narrative-side-box h4 {
+            color: var(--secondary);
+        }
+        .narrative-side-box p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* HIGHLIGHT BANNERS & GRIDS */
+        .highlight-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(139, 0, 0, 0.08) 100%);
+            border-left: 5px solid var(--secondary);
+            border-right: 1px solid var(--border-jawa);
+            border-top: 1px solid var(--border-jawa);
+            border-bottom: 1px solid var(--border-jawa);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .highlight-banner h4 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        body.dark-mode .highlight-banner h4 {
+            color: var(--secondary);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .info-card-item {
+            background: var(--bg);
+            border: 1px solid var(--border-jawa);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .info-card-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.12);
+        }
+        .info-card-item h4 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        body.dark-mode .info-card-item h4 {
+            color: var(--secondary);
+        }
+        
+        /* MUSIC WIDGET (KANAN BAWAH) */
+        .music-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            padding: 12px 22px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 99999;
+            font-size: 0.95rem;
+            font-weight: bold;
+            backdrop-filter: blur(8px);
+        }
+        .music-btn {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.88rem;
+        }
+        .music-btn:hover {
+            transform: scale(1.08);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1c1510;
+            color: #d4af37;
+            margin-top: 60px;
+            border-top: 3px solid var(--secondary);
+            font-size: 0.95rem;
+        }
+        @media (max-width: 900px) {
+            .video-narrative-grid {
+                grid-template-columns: 1fr; /* Berubah jadi 1 kolom di layar HP/Tablet */
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .tab-btn { min-width: 130px; font-size: 0.95rem; padding: 14px; }
+            .tab-content-area { padding: 25px; }
+            .back-nav-bar { flex-direction: column; align-items: stretch; }
+            .top-controls-group { justify-content: flex-end; }
+            .music-widget { bottom: 20px; right: 15px; padding: 8px 14px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-subtitle">Monografi Sejarah, Kebudayaan &amp; Warisan Budaya Takbenda</div>
+        <h1>Kecamatan Pengadegan, Kabupaten Purbalingga</h1>
+        <div class="jawa-divider">꧁ ꦥꦼꦔꦢꦼꦒꦤ꧀ ꦥꦸꦂꦧꦭꦶꦁꦒ ꧂</div>
+        <p class="tagline">Pusat Tradisi Kriya Ngantih Benang Tumanggal (WBTb), Kesenian Kidungan Pasunggingan, Warisan Agraris, dan Potensi Industri Perdesaan</p>
+    </header>
+    <div class="container">
+        <!-- NAVIGASI ATAS -->
+        <div class="back-nav-bar">
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+            <div class="top-controls-group">
+                <button class="nav-control-btn" id="themeNavBtn" onclick="toggleTheme()">🌙 Mode Gelap</button>
+                <button class="nav-control-btn" id="readingNavBtn" onclick="toggleReadingMode()">📖 Mode Baca</button>
+            </div>
+        </div>
+        <!-- TAB CONTAINER Utama -->
+        <div class="tab-container">
+            <div class="tab-headers">
+                <button class="tab-btn active" onclick="switchTab(event, 'sejarahTab')">📜 1. Asal-Usul &amp; Sejarah Wilayah</button>
+                <button class="tab-btn" onclick="switchTab(event, 'geografiTab')">🌊 2. Geografi &amp; Demografi</button>
+                <button class="tab-btn" onclick="switchTab(event, 'budayaTab')">🎭 3. Warisan Budaya &amp; Tradisi</button>
+                <button class="tab-btn" onclick="switchTab(event, 'potensiTab')">🌿 4. Potensi Agraris &amp; Ekonomi</button>
+            </div>
+            <div class="tab-content-area">
+                <!-- TAB 1: SEJARAH & ASAL-USUL PENGADEGAN -->
+                <div id="sejarahTab" class="tab-pane active">
+                    <h2 class="section-title-alt">Asal-Usul Penamaan &amp; Rekam Sejarah Pengadegan</h2>
+                    <p>Secara historis, <strong>Kecamatan Pengadegan</strong> memegang peranan penting dalam konstelasi sejarah pemukiman perdesaan di bagian timur Kabupaten Purbalingga. Penamaan <em>Pengadegan</em> mengakar dari istilah Bahasa Jawa <em>"Pangadegan"</em> (berasal dari kata dasar <em>adeg</em> atau berdiri), yang merujuk pada kawasan tempat berdiri atau pijakan awal pemukiman kuno yang memiliki nilai spiritual dan posisi geografis strategis dalam tatanan agraris lokal Banyumasan.</p>
+                    
+                    <div class="highlight-banner">
+                        <h4>⛰️ Benteng Pertanian &amp; Jalur Tradisi Perbukitan Timur</h4>
+                        <p style="margin-bottom: 0;">Masyarakat perdesaan Pengadegan sejak era lampau telah membangun peradaban agraris berbasis pemanfaatan lahan perbukitan, lereng ladang, serta lembah sungai. Hubungan harmonis antara pola kehidupan agraris, nilai gotong royong, dan penghormatan pada leluhur membentuk identitas khas komunitas lokal di wilayah ini.</p>
+                    </div>
+
+                    <p>Dalam sejarah peradaban perdesaan Purbalingga, kawasan Pengadegan tidak hanya berperan sebagai penyangga pangan dan kawasan perkebunan kelapa, tetapi juga menjadi benteng pertahanan kriya tradisional yang mampu bertahan melintasi jaman, seperti industri kerajinan kain/benang kapas dan seni pertunjukan rakyat.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card-item">
+                            <h4>Pilar Sejarah Pemukiman</h4>
+                            <p>Wilayah pemukiman tua yang berkembang di sekitar aliran sungai dan lereng bukit, membentuk pola pemukiman berbasis ikatan kekeluargaan dan gotong royong.</p>
+                        </div>
+                        <div class="info-card-item">
+                            <h4>Sentra Kriya &amp; Tradisi Lokal</h4>
+                            <p>Desa-desa di Pengadegan seperti Tumanggal, Pasunggingan, Panunggalan, dan Bedahan memelihara warisan leluhur yang menjadi kebanggaan budaya Purbalingga.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: GEOGRAFI & DEMOGRAFI -->
+                <div id="geografiTab" class="tab-pane">
+                    <h2 class="section-title-alt">Geografi, Bentang Alam, &amp; Demografi Wilayah</h2>
+                    <p>Kecamatan Pengadegan terletak di zona bagian timur Kabupaten Purbalingga dengan kondisi topografi yang bervariasi, mulai dari dataran rendah bergelombang hingga kawasan perbukitan subur. Secara administratif, wilayah Pengadegan berbatasan langsung dengan Kecamatan Kejobong di sebelah selatan, Kecamatan Kaligondang di barat, serta Kecamatan Karangmoncol di sebelah utara.</p>
+                    
+                    <div class="highlight-banner">
+                        <h4>📊 Profil Sosial Demografi Wilayah</h4>
+                        <p style="margin-bottom: 0;">Penduduk Kecamatan Pengadegan mayoritas menggantungkan mata pencaharian pada sektor agraris sebagai petani padi sawah dan ladang, penderas nira kelapa (produsen gula Jawa tradisional), serta perajin industri kriya rumah tangga dan olahan pangan lokal.</p>
+                    </div>
+
+                    <div class="highlight-banner" style="background: rgba(212, 175, 55, 0.08); border-left-color: var(--primary);">
+                        <h4>🏞️ Bentang Alam &amp; Karakteristik Geografis</h4>
+                        <p>Lanskap perbukitan Pengadegan dihiasi hamparan perkebunan kelapa, perladangan hortikultura, serta sistem pengairan sungai alami yang memberikan kesegaran udara khas perdesaan utara-timur Purbalingga.</p>
+                        <p style="margin-bottom: 0;">Kondisi tanah yang kaya unsur hara vulkanik dan aluvial menjadikan wilayah ini sangat cocok untuk budidaya kelapa nira, kayu sengon, tanaman obat kapulaga, serta komoditas palawija unggulan.</p>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card-item">
+                            <h4>Sebaran Wilayah Desa</h4>
+                            <p>Mencakup 9 desa utama: Pengadegan, Tumanggal, Pasunggingan, Panunggalan, Bedahan, Karangjoho, Tetel, Larangan, dan Timbang.</p>
+                        </div>
+                        <div class="info-card-item">
+                            <h4>Sumber Daya Alam &amp; Lingkungan</h4>
+                            <p>Potensi mata air pegunungan, kawasan hutan rakyat sengon, dan lahan perkebunan kelapa produktif yang membentang luas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: WARISAN BUDAYA & TRADISI (NGANTIH BENANG & KIDUNGAN) -->
+                <div id="budayaTab" class="tab-pane">
+                    <h2 class="section-title-alt">Warisan Budaya Takbenda &amp; Kesenian Tradisional</h2>
+                    <p>Kecamatan Pengadegan merupakan kantong kebudayaan tradisional terpenting di Kabupaten Purbalingga. Wilayah ini menyimpan kekayaan warisan kriya tekstil kuno berstatus Warisan Budaya Takbenda (WBTb) Indonesia serta tradisi sastra lisan ritulis yang masih dipelihara secara turun-temurun.</p>
+
+                    <!-- VIDEO & PENJELASAN MENDALAM: TRADISI NGANTIH BENANG TUMANGGAL -->
+                    <div class="video-narrative-grid">
+                        <div class="video-container-modern">
+                            <iframe src="https://www.youtube.com/embed/b4JmYoaSziI" title="Dokumentasi Kriya Ngantih Benang Tumanggal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="narrative-side-box">
+                            <h4>🧵 Kriya Ngantih Benang Tumanggal (WBTb Indonesia)</h4>
+                            <p><strong>Ngantih Benang</strong> di Desa Tumanggal adalah proses pemintalan serat kapas alami menjadi benang tenun menggunakan alat kayu tradisional bernama <em>Jantra</em>. Tradisi ini telah berakar sejak abad ke-19 dan dilestarikan oleh para perempuan sepuh Tumanggal secara efisien dan telaten.</p>
+                            <p>Proses dimulainya <em>Ngantih</em> meliputi tahap pemisahan biji kapas (<em>nggintil</em>), penepakan benih kapas menjadi gulungan halus (<em>ngulur/nggiles</em>), hingga dipintal dengan putaran <em>jantra</em> menjadi helai benang kain tenun yang kuat. Pada tahun 2021, Kriya Ngantih Benang Tumanggal resmi ditetapkan sebagai <strong>Warisan Budaya Takbenda (WBTb) Indonesia</strong> oleh Kementerian Pendidikan dan Kebudayaan RI karena keunikannya yang langka di Pulau Jawa.</p>
+                        </div>
+                    </div>
+
+                    <!-- VIDEO & PENJELASAN MENDALAM: TRADISI KIDUNGAN PASUNGGINGAN -->
+                    <div class="video-narrative-grid">
+                        <div class="video-container-modern">
+                            <iframe src="https://www.youtube.com/embed/gwoZ4Fry9E0" title="Kesenian Kidungan Pasunggingan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="narrative-side-box">
+                            <h4>🎤 Tradisi Kidungan Pasunggingan</h4>
+                            <p><strong>Kidungan Pasunggingan</strong> di Desa Pasunggingan merupakan warisan seni sastra tutur lisan dan seni vokal ritulis khas Jawa Banyumasan. Kidungan ini melantunkan bait-bait tembang spiritual, nasehat moral, puji-pujian agung, serta mantra keselamatan dalam laras slendro/pelog.</p>
+                            <p>Tradisi ini biasanya dibawakan oleh tokoh pambiwara atau sesepuh adat saat upacara ritulis perdesaan seperti <em>Sedekah Bumi</em>, prosesi ruwatan desa, serta hajatan adat poci/pernikahan. Selain berfungsi sebagai hiburan spiritual, Kidungan Pasunggingan dipercaya masyarakat lokal sebagai sarana penolak bala (tolak balak) dan ungkapan rasa syukur atas keharmonisan alam dan manusia.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-banner">
+                        <h4>🐎 Kesenian Ebeg &amp; Tradisi Sedekah Bumi</h4>
+                        <p style="margin-bottom: 0;">Selain Kriya Ngantih dan Kidungan, warga Pengadegan aktif merawat kesenian <strong>Ebeg (Kuda Lumping khas Banyumasan)</strong>, karawitan, dan calung. Setiap musim panen usai, tradisi <em>Sedekah Bumi</em> digelar serentak di tiap desa dengan menyajikan tumpeng bumi dan penampilan seni rakyat malam hari.</p>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card-item">
+                            <h4>Pelestarian Alat Jantra Kuno</h4>
+                            <p>Upaya konservasi fisik alat pemintal benang jantra kayu kuno dan pemberdayaan perajin generasi penerus di Desa Tumanggal.</p>
+                        </div>
+                        <div class="info-card-item">
+                            <h4>Seni Tutur Lisan Ritulis</h4>
+                            <p>Dokumentasi bait-bait syair sastra Kidungan Pasunggingan sebagai bagian dari penguatan identitas budaya lokal Purbalingga.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: POTENSI WILAYAH & EKONOMI -->
+                <div id="potensiTab" class="tab-pane">
+                    <h2 class="section-title-alt">Potensi Agraris, Perkebunan, &amp; Ekonomi Perdesaan</h2>
+                    <p>Kecamatan Pengadegan memegang peranan strategis sebagai salah satu pusat industri perdesaan berbasis nira kelapa, hasil ladang hortikultura, serta UMKM kriya di Kabupaten Purbalingga.</p>
+                    
+                    <div class="highlight-banner">
+                        <h4>🌴 Sentra Utama Gula Jawa &amp; Industri Penderas Kelapa</h4>
+                        <p style="margin-bottom: 0;">Profesi penderas nira kelapa (pengolah gula merah cetak dan gula cetak serbuk/gula semut) menjadi tulang punggung ekonomi bagi ribuan keluarga di desa-desa Pengadegan. Produk gula Jawa Pengadegan dikenal memiliki tingkat kemurnian dan daya tahan simpan yang tinggi.</p>
+                    </div>
+
+                    <div class="highlight-banner" style="background: rgba(139, 0, 0, 0.05); border-left-color: var(--primary);">
+                        <h4>🌾 Hasil Perkebunan &amp; UMKM Kreatif</h4>
+                        <p>Selain gula kelapa, sektor pertanian Pengadegan unggul dalam memproduksi tanaman pangan seperti padi sawah, singkong, kapulaga, kayu sengon laut, serta buah durian lokal.</p>
+                        <p style="margin-bottom: 0;">Pertumbuhan ekonomi warga disokong oleh industri pengolahan pangan perdesaan seperti olahan gembus, keripik tempe, serta pemasaran kerajinan benang dan olahan bahan bambu.</p>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card-item">
+                            <h4>Pemberdayaan UMKM Gula Semut</h4>
+                            <p>Pengembangan kelompok usaha penderas nira menuju sertifikasi organik dan ekspor gula kelapa kristal bermutu tinggi.</p>
+                        </div>
+                        <div class="info-card-item">
+                            <h4>Koperasi &amp; Rantai Pasok Lokal</h4>
+                            <p>Kehadiran pasar-pasar perdesaan dan koperasi simpan pinjam desa yang memperkuat jaringan pemasaran komoditas warga.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PEMUTAR MUSIK GAMELAN / KRUMPYUNG (KANAN BAWAH) -->
+    <div class="music-widget">
+        <span>🪕 Gamelan Jawa</span>
+        <audio id="gamelanAudio" loop src="Gending Temanten Adat Jawa kebo giro.mp3"></audio>
+        <button id="gamelanBtn" class="music-btn" onclick="toggleGamelan()">▶️ Bunyikan</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Portal Arsip Budaya &amp; Sejarah Kecamatan Pengadegan | Kabupaten Purbalingga</p>
+    </footer>
+
+    <script>
+        const audio = document.getElementById("gamelanAudio");
+        const btn = document.getElementById("gamelanBtn");
+
+        function switchTab(evt, tabId) {
+            const panes = document.getElementsByClassName("tab-pane");
+            for (let i = 0; i < panes.length; i++) {
+                panes[i].classList.remove("active");
+            }
+            const buttons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const themeBtn = document.getElementById('themeNavBtn');
+            themeBtn.innerText = document.body.classList.contains('dark-mode') ? "☀️ Mode Terang" : "🌙 Mode Gelap";
+        }
+
+        function toggleReadingMode() {
+            document.body.classList.toggle('reading-mode');
+            const readingBtn = document.getElementById('readingNavBtn');
+            readingBtn.innerText = document.body.classList.contains('reading-mode') ? "📖 Mode Baca: On" : "📖 Mode Baca";
+        }
+
+        function toggleGamelan() {
+            if (audio.paused) {
+                audio.play();
+                btn.innerText = "⏸️ Hentikan";
+            } else {
+                audio.pause();
+                btn.innerText = "▶️ Bunyikan";
+            }
+        }
+    </script>
+</body>
+</html>
