@@ -40,7 +40,6 @@
             --radius-md: 14px;
             --radius-lg: 24px;
         }
-
         /* MODE GELAP */
         body.dark-mode {
             --bg: #100e0c;
@@ -61,7 +60,6 @@
             --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
             --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.6);
         }
-
         /* MODE BACA */
         body.reading-mode {
             font-size: 1.15rem;
@@ -75,14 +73,12 @@
         body.reading-mode .container {
             max-width: 920px;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
         }
-
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
@@ -97,13 +93,11 @@
             background-attachment: fixed;
             -webkit-font-smoothing: antialiased;
         }
-
         body.dark-mode {
             background-image: 
                 linear-gradient(rgba(16, 14, 12, 0.94), rgba(16, 14, 12, 0.94)), 
                 url('wayang.jpg');
         }
-
         /* --- HEADER SESUAI DESAIN GAMBAR --- */
         header {
             background: linear-gradient(var(--header-overlay-1), var(--header-overlay-2)), url('slamet.jpg');
@@ -119,7 +113,6 @@
             position: relative;
             margin-bottom: 25px;
         }
-
         .header-subtitle {
             display: inline-block;
             font-size: 0.82rem;
@@ -134,7 +127,6 @@
             background: rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(4px);
         }
-
         header h1 {
             font-size: 2.9rem;
             font-family: 'Cinzel', Georgia, serif;
@@ -144,7 +136,6 @@
             text-shadow: 0 4px 12px rgba(0,0,0,0.6);
             letter-spacing: 1px;
         }
-
         header p.tagline {
             color: #f7eede;
             font-size: 1.15rem;
@@ -153,14 +144,12 @@
             max-width: 700px;
             margin: 0 auto;
         }
-
         /* --- FLOATING RUNNING TICKER KAPSUL --- */
         .ticker-container {
             max-width: 1080px;
             margin: -10px auto 30px;
             padding: 0 20px;
         }
-
         .ticker-wrap {
             background: rgba(22, 15, 12, 0.92);
             backdrop-filter: blur(10px);
@@ -175,22 +164,18 @@
             font-size: 0.95rem;
             font-weight: 500;
         }
-
         .ticker-move {
             display: inline-block;
             animation: marquee 28s linear infinite;
         }
-
         .ticker-item {
             display: inline-block;
             padding: 0 25px;
         }
-
         @keyframes marquee {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
         }
-
         .jawa-divider {
             display: flex;
             align-items: center;
@@ -200,20 +185,17 @@
             color: var(--secondary);
             font-size: 1.2rem;
         }
-
         .jawa-divider::before, .jawa-divider::after {
             content: "";
             height: 2px;
             width: 90px;
             background: linear-gradient(to right, transparent, var(--secondary), transparent);
         }
-
         .container {
             max-width: 1080px;
             margin: 0 auto 35px;
             padding: 0 20px;
         }
-
         .section-card {
             background: var(--card-bg);
             backdrop-filter: var(--glass-blur);
@@ -226,11 +208,9 @@
             border-top: 4px solid var(--primary);
             position: relative;
         }
-
         .section-card:hover {
             box-shadow: 0 16px 40px rgba(0,0,0,0.15);
         }
-
         .section-title {
             color: var(--primary);
             font-family: 'Cinzel', serif;
@@ -243,7 +223,6 @@
             align-items: center;
             gap: 12px;
         }
-
         .section-title::before {
             content: "ꦧꦸꦢꦪ";
             font-size: 0.85rem;
@@ -255,16 +234,13 @@
             border-radius: var(--radius-sm);
             border: 1px solid var(--border-jawa);
         }
-
         body.dark-mode .section-title::before {
             background: rgba(42, 34, 24, 0.6);
             color: var(--secondary);
         }
-
         .search-box-container {
             margin-bottom: 20px;
         }
-
         .search-input {
             width: 100%;
             padding: 14px 20px;
@@ -277,13 +253,11 @@
             color: var(--text);
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
         }
-
         .search-input:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.15);
         }
-
         .map-box {
             width: 100%;
             background: var(--search-bg);
@@ -297,7 +271,6 @@
             padding: 12px;
             box-shadow: var(--shadow-subtle);
         }
-
         .map-box img {
             width: 100%;
             height: auto;
@@ -306,7 +279,6 @@
             display: block;
             border-radius: var(--radius-sm);
         }
-
         #leafletMap {
             height: 480px;
             width: 100%;
@@ -316,14 +288,12 @@
             z-index: 1;
             box-shadow: var(--shadow-subtle);
         }
-
         .district-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 16px;
             margin-top: 20px;
         }
-
         .district-btn {
             background: linear-gradient(rgba(255, 253, 248, 0.92), rgba(255, 253, 248, 0.92)), url('logo purbalingga.png');
             background-size: 55px auto;
@@ -340,7 +310,6 @@
             position: relative;
             box-shadow: var(--shadow-subtle);
         }
-
         body.dark-mode .district-btn {
             background: linear-gradient(rgba(30, 25, 20, 0.94), rgba(30, 25, 20, 0.94)), url('logo purbalingga.png');
             background-size: 55px auto;
@@ -348,11 +317,9 @@
             background-repeat: no-repeat;
             color: var(--secondary);
         }
-
         .district-btn.hidden {
             display: none !important;
         }
-
         .district-btn::after {
             content: "ꦏꦼꦕꦠꦤ꧀";
             position: absolute;
@@ -362,7 +329,6 @@
             color: var(--text-muted);
             font-weight: normal;
         }
-
         .district-btn:hover {
             background: var(--primary);
             color: var(--secondary);
@@ -370,11 +336,9 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
         }
-
         body.dark-mode .district-btn:hover {
             color: #ffffff;
         }
-
         /* 3D CAROUSEL & CONSTELLATIONS */
         .carousel-3d-section {
             position: relative;
@@ -391,7 +355,6 @@
             justify-content: center;
             perspective: 1000px;
         }
-
         .carousel-3d-section::before {
             content: "";
             position: absolute;
@@ -410,13 +373,11 @@
             pointer-events: none;
             z-index: 1;
         }
-
         @keyframes cosmicTwinkle {
             0% { transform: translateY(0) rotate(0deg); }
             50% { opacity: 0.95; }
             100% { transform: translateY(-350px) rotate(1deg); }
         }
-
         .constellation-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -425,18 +386,15 @@
             opacity: 0.35;
             transition: opacity 1.5s ease-in-out;
         }
-
         .constellation-bg svg { width: 100%; height: 100%; }
         .constellation-bg polyline { fill: none; stroke: var(--secondary); stroke-width: 1.2; stroke-dasharray: 4 3; opacity: 0.8; }
         .constellation-bg circle { fill: #fff; filter: drop-shadow(0 0 3px var(--secondary)); }
-
         .constellation-info-panel {
             position: absolute;
             bottom: 15px; left: 18px; right: 18px;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 3; pointer-events: none;
         }
-
         .constellation-label, .live-clock-badge {
             font-size: 0.78rem;
             color: var(--secondary);
@@ -448,13 +406,11 @@
             letter-spacing: 0.5px;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-
         .carousel-3d-stage {
             position: relative; width: 100%; height: 100%;
             display: flex; align-items: center; justify-content: center;
             transform-style: preserve-3d; z-index: 2;
         }
-
         .carousel-3d-card {
             position: absolute; width: 230px; height: 285px;
             background: var(--search-bg); border: 2px solid var(--secondary);
@@ -464,22 +420,18 @@
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             backface-visibility: hidden;
         }
-
         .carousel-3d-card img { width: 100%; height: 185px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-jawa); }
         .lampau-card img { filter: sepia(35%); }
-
         .carousel-3d-plaque {
             text-align: center; font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.82rem; color: var(--text); margin-top: 8px;
             font-style: italic; border-top: 1px dashed var(--border-jawa);
             padding-top: 6px; font-weight: 600;
         }
-
         .carousel-3d-card.pos-center { transform: translateX(0) translateZ(120px) rotateY(0deg); z-index: 10; opacity: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.5); }
         .carousel-3d-card.pos-left { transform: translateX(-170px) translateZ(0px) rotateY(35deg) scale(0.9); z-index: 5; opacity: 0.7; filter: brightness(0.85); }
         .carousel-3d-card.pos-right { transform: translateX(170px) translateZ(0px) rotateY(-35deg) scale(0.9); z-index: 5; opacity: 0.7; filter: brightness(0.85); }
         .carousel-3d-card.pos-hidden { transform: scale(0.5) translateZ(-300px); z-index: 1; opacity: 0; pointer-events: none; }
-
         .carousel-nav-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: var(--primary); color: var(--secondary);
@@ -488,18 +440,15 @@
             z-index: 20; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
-
         .carousel-nav-btn:hover { background: var(--secondary); color: var(--primary); transform: translateY(-50%) scale(1.1); }
         .carousel-prev { left: 15px; }
         .carousel-next { right: 15px; }
-
         .embedded-search-box {
             width: 100%; max-height: 420px; background: var(--search-bg);
             border: 1px solid var(--border-jawa); border-radius: var(--radius-sm);
             margin-top: 15px; overflow-y: auto; display: none; padding: 8px;
             box-shadow: var(--shadow-subtle);
         }
-
         /* MODALS */
         .modal-overlay {
             visibility: hidden; opacity: 0; position: fixed;
@@ -509,9 +458,7 @@
             backdrop-filter: blur(8px);
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-
         .modal-overlay.active { visibility: visible; opacity: 1; }
-
         .modal-content {
             background: var(--modal-bg); backdrop-filter: var(--glass-blur);
             width: 100%; max-width: 850px; border-radius: var(--radius-md);
@@ -519,24 +466,18 @@
             display: flex; flex-direction: column; max-height: 90vh; overflow-y: auto;
             transform: scale(0.92); transition: transform 0.35s ease;
         }
-
         .modal-overlay.active .modal-content { transform: scale(1); }
-
         .modal-header {
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 2px solid var(--secondary); padding-bottom: 12px; margin-bottom: 20px;
         }
-
         .modal-header h3 { color: var(--primary); font-size: 1.6rem; margin: 0; font-family: 'Cinzel', serif; font-weight: 700; }
-
         .close-btn {
             background: var(--primary); color: var(--secondary); border: 1px solid var(--secondary);
             width: 36px; height: 36px; border-radius: 50%; font-size: 1.4rem; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
         }
-
         .close-btn:hover { background: var(--secondary); color: var(--primary); transform: rotate(90deg); }
-
         .modal-body { display: flex; gap: 25px; flex-wrap: wrap; }
         .modal-left { flex: 2; min-width: 280px; }
         .modal-right {
@@ -544,61 +485,48 @@
             padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-jawa);
             display: flex; flex-direction: column; justify-content: space-between;
         }
-
         .modal-video-box {
             position: relative; width: 100%; padding-bottom: 56.25%;
             background: #111; border-radius: var(--radius-sm); overflow: hidden;
             margin-top: 15px; border: 1px solid var(--border-jawa);
         }
-
         .modal-video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
         .btn-next {
             display: block; background: var(--primary); color: var(--secondary);
             border: 1px solid var(--secondary); text-decoration: none; text-align: center;
             padding: 12px 16px; border-radius: var(--radius-sm); font-weight: 700; margin-top: 20px;
         }
-
         .btn-next:hover { background: var(--secondary); color: var(--primary); transform: translateY(-2px); }
-
         .nav-btn {
             display: block; background: #27ae60; color: #fff; border: 1px solid #2ecc71;
             text-decoration: none; text-align: center; padding: 10px 16px;
             border-radius: var(--radius-sm); font-weight: 600; margin-top: 10px; font-size: 0.9rem;
         }
-
         .nav-btn:hover { background: #219653; transform: translateY(-2px); }
-
         .distance-info {
             background: var(--search-bg); padding: 10px 14px;
             border-radius: var(--radius-sm); border: 1px dashed var(--border-jawa);
             font-size: 0.88rem; margin-top: 10px; color: var(--text);
         }
-
         .fly-lightbox-overlay {
             visibility: hidden; opacity: 0; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(10, 5, 2, 0.85); z-index: 2000; display: flex;
             justify-content: center; align-items: center; backdrop-filter: blur(10px); padding: 20px;
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
-
         .fly-lightbox-overlay.active { visibility: visible; opacity: 1; }
-
         .fly-lightbox-box {
             background: var(--modal-bg); border: 2px solid var(--secondary);
-            border-radius: var(--radius-md); max-width: 800px; width: 100%; padding: 30px;
-            box-shadow: var(--shadow-glass); display: flex; gap: 25px; flex-wrap: wrap;
+            border-radius: var(--radius-md); max-width: 90vw; max-height: 90vh; padding: 20px;
+            box-shadow: var(--shadow-glass); display: flex; flex-direction: column; align-items: center; justify-content: center;
             transform: scale(0.5) translateY(60px); opacity: 0;
             transition: transform 0.5s ease, opacity 0.4s ease;
+            position: relative;
         }
-
         .fly-lightbox-overlay.active .fly-lightbox-box { transform: scale(1) translateY(0); opacity: 1; }
-        .fly-lightbox-img-wrap { flex: 1; min-width: 260px; }
-        .fly-lightbox-img-wrap img { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: var(--radius-sm); border: 2px solid var(--secondary); }
-        .fly-lightbox-info { flex: 1.2; min-width: 260px; display: flex; flex-direction: column; justify-content: space-between; }
-        .fly-lightbox-info h3 { color: var(--primary); font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 2px dashed var(--secondary); padding-bottom: 8px; }
-        .fly-lightbox-info p { font-size: 0.98rem; color: var(--text); line-height: 1.6; }
-
+        .fly-lightbox-img-wrap { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+        .fly-lightbox-img-wrap img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: var(--radius-sm); border: 2px solid var(--secondary); }
+        
         /* CONTROLS */
         .control-panel-container { position: fixed; bottom: 24px; left: 24px; z-index: 9999; }
         .control-toggle-btn {
@@ -608,7 +536,6 @@
             display: flex; align-items: center; gap: 8px;
         }
         .control-toggle-btn:hover { transform: translateY(-2px) scale(1.03); background: var(--primary-hover); }
-
         .control-menu {
             display: none; position: absolute; bottom: 60px; left: 0;
             background: var(--modal-bg); backdrop-filter: var(--glass-blur);
@@ -616,34 +543,28 @@
             padding: 12px; box-shadow: var(--shadow-glass); width: 210px;
             flex-direction: column; gap: 8px; opacity: 0; visibility: hidden; transform: translateY(10px);
         }
-
         .control-menu.active { display: flex; opacity: 1; visibility: visible; transform: translateY(0); }
-
         .menu-item-btn {
             background: var(--primary); color: var(--secondary); border: 1px solid var(--secondary);
             padding: 10px 14px; border-radius: 20px; font-weight: 600; cursor: pointer;
             font-size: 0.85rem; font-family: 'Plus Jakarta Sans', sans-serif; text-align: center;
         }
         .menu-item-btn:hover { background: var(--secondary); color: var(--primary); }
-
         .music-widget {
             position: fixed; bottom: 24px; right: 24px; background: var(--primary);
             color: var(--secondary); border: 2px solid var(--secondary); padding: 10px 20px;
             border-radius: 30px; box-shadow: var(--shadow-glass); display: flex; align-items: center;
             gap: 12px; z-index: 9999; font-size: 0.9rem; font-weight: 700;
         }
-
         .music-btn {
             background: var(--secondary); color: var(--primary); border: none;
             padding: 6px 14px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.85rem;
         }
         .music-btn:hover { transform: scale(1.06); }
-
         footer {
             text-align: center; padding: 30px 20px; background: rgba(28, 21, 16, 0.95);
             color: var(--secondary); margin-top: 50px; border-top: 3px solid var(--secondary); font-size: 0.95rem;
         }
-
         @media (max-width: 650px) {
             header h1 { font-size: 1.8rem; }
             .modal-body { flex-direction: column; }
@@ -653,7 +574,6 @@
     </style>
 </head>
 <body>
-
     <!-- HEADER PERSIS DENGAN GAMBAR DESAIN -->
     <header>
         <div class="header-subtitle">Sugeng Rawuh Wonten ing Portal Kebudayaan</div>
@@ -661,7 +581,6 @@
         <div class="jawa-divider">꧁ ꦥꦸꦂꦧꦭꦶꦁꦒ ꧂</div>
         <p class="tagline">Nilai Sejarah, Tradisi, lan Warisan Kesenian ing 18 Kecamatan Banyumasan</p>
     </header>
-
     <!-- FLOATING TICKER KAPSUL -->
     <div class="ticker-container">
         <div class="ticker-wrap">
@@ -682,7 +601,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <!-- 1. Prakata & Sejarah -->
         <div class="section-card">
@@ -691,7 +609,6 @@
             <br>
             <p><strong>Sejarah Singkat:</strong> Hari Jadi Kabupaten Purbalingga katetepaken tanggal 18 Desember 1730. Sejarah wilayah punika mboten saged dipunpisahaken saking labuh labuh Kyai Arsantaka (Kyai Jamur) lan putranipun, Kyai Yudo Nagaro (Adipati Karo) ingkang katetepaken dados Adipati Kapisan Purbalingga dening Sunan Pakubuwono II. Budaya Purbalingga ngrembaka saking sintesis ajaran lokal, nilai keagamaan, lan karakter msyarakat Banyumasan ingkang blaka suta (cablaka).</p>
         </div>
-
         <!-- 2. Peta Purbalingga -->
         <div class="section-card">
             <h2 class="section-title">Peta Wilayah Kebudayaan</h2>
@@ -731,11 +648,10 @@
                 <button class="district-btn" onclick="openDetail('Kertanegara')">18. Kertanegara</button>
             </div>
         </div>
-
         <!-- 4. Pojok Budaya -->
         <div class="section-card">
             <h2 class="section-title">Pojok Budaya & Galeri Warisan</h2>
-            <p>Klik foto di galeri untuk melihat animasi terbang mendekat ke layar beserta informasi lengkapnya:</p>
+            <p>Klik foto di galeri untuk memperbesar foto:</p>
             
             <div class="carousel-3d-section" id="spaceSection1">
                 <div class="constellation-bg" id="constellationBox1"></div>
@@ -745,15 +661,15 @@
                 </div>
                 <button class="carousel-nav-btn carousel-prev" onclick="slideCarousel('budayaCarousel', -1)">❮</button>
                 <div class="carousel-3d-stage" id="budayaCarousel">
-                    <div class="carousel-3d-card" onclick="openFlyModal('wayang.jpg', 'Koleksi Wayang Kulit Banyumasan', 'Wayang Kulit Purbalingga nggadhahi ciri khas gagalan gagrak Banyumasan (Sutran/Banyumasan kidul) sing lugu, ekspresif, lan kebak nilai filosofi urip rakyat.')">
+                    <div class="carousel-3d-card" onclick="openFlyModal('ebeg.jpeg')">
                         <img src="ebeg.jpeg" alt="Pameran Wayang">
                         <div class="carousel-3d-plaque">Pertunjukan Ebeg Banyumasan sebagai ekspresi budaya kerakyatan Purbalingga dan Banyumasan</div>
                     </div>
-                    <div class="carousel-3d-card" onclick="openFlyModal('slamet.jpg', 'Panorama & Budaya Lereng Slamet', 'Lereng Gunung Slamet dados sumber kauripan, kesuburan tatanan tetanen, sarta pusep tradisi ritual spiritual masyarakat purba dumugi sapunika.')">
+                    <div class="carousel-3d-card" onclick="openFlyModal('slamet.jpg')">
                         <img src="slamet.jpg" alt="Lereng Gunung Slamet">
                         <div class="carousel-3d-plaque">Gunung Slamet sebagai sumber budaya Purbalingga dan Banyumas</div>
                     </div>
-                    <div class="carousel-3d-card" onclick="openFlyModal('kec di purbalingga.jpg', 'Kentongan sebagai akar Budaya Banyumasan', 'Peta administratif persebaran 18 kecamatan ing Kabupaten Purbalingga ingkang nyimpen maneka warna jejak sajarah pemerintahan lokal.')">
+                    <div class="carousel-3d-card" onclick="openFlyModal('kentongan.jpg')">
                         <img src="kentongan.jpg" alt="Tradisi kentongan">
                         <div class="carousel-3d-plaque">Budaya Seni Kentongan</div>
                     </div>
@@ -761,11 +677,10 @@
                 <button class="carousel-nav-btn carousel-next" onclick="slideCarousel('budayaCarousel', 1)">❯</button>
             </div>
         </div>
-
         <!-- 5. Pojok Lampau -->
         <div class="section-card">
             <h2 class="section-title">Pojok Lampau & Arsip Tempo Doeloe</h2>
-            <p>Klik arsip foto tempo doeloe untuk menerbangkannya ke layar:</p>
+            <p>Klik arsip foto tempo doeloe untuk memperbesar foto:</p>
             
             <div class="carousel-3d-section" id="spaceSection2">
                 <div class="constellation-bg" id="constellationBox2"></div>
@@ -775,19 +690,146 @@
                 </div>
                 <button class="carousel-nav-btn carousel-prev" onclick="slideCarousel('lampauCarousel', -1)">❮</button>
                 <div class="carousel-3d-stage" id="lampauCarousel">
-                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('wayang.jpg', 'Potret Dokumentasi Tempo Doeloe', 'Dokumentasi fotografi masa kolonial Belanda ing wewengkon Banyumas lan Purbalingga ing abad ka-19 ngantos awal abad ka-20.')">
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('masjid agung darrusalam.jpg')">
                         <img src="masjid agung darrusalam.jpg" alt="Foto Masjid Agung Darussalam Tempo Dulu">
                         <div class="carousel-3d-plaque">Potret Masjid Agung Darussalam Tempo Dulu</div>
                     </div>
-                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('slamet.jpg', 'Arsip Kolonial & Pegunungan Serayu', 'Catatan arsip perjalanan penjelajah lan peta kolonial ing cekungan Kali Serayu sarta pegunungan sekitar Purbalingga.')">
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('perpisahan dr bernard ahaart - rsuds ii pbg \'59.jpg')">
                         <img src="perpisahan dr bernard ahaart - rsuds ii pbg '59.jpg" alt="Perpisahan dr Bernard Ahaart">
-                        <div class="carousel-3d-plaque">Arsip Kolonial & Pegunungan Serayu</div>
+                        <div class="carousel-3d-plaque">Perpisahan dr Bernard Ahaart - RSUDS II PBG '59</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('stasiun purbalingga.jpg')">
+                        <img src="stasiun purbalingga.jpg" alt="Stasiun Purbalingga">
+                        <div class="carousel-3d-plaque">Stasiun Purbalingga</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('sambutan peresmian tempat sepeda smp1.jpg')">
+                        <img src="sambutan peresmian tempat sepeda smp1.jpg" alt="Sambutan Peresmian Tempat Sepeda SMP 1">
+                        <div class="carousel-3d-plaque">Sambutan Peresmian Tempat Sepeda SMP 1</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('pendopo dipokusumo.jpg')">
+                        <img src="pendopo dipokusumo.jpg" alt="Pendopo Dipokusumo">
+                        <div class="carousel-3d-plaque">Pendopo Dipokusumo</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('kumpulan pamong desa.jpg')">
+                        <img src="kumpulan pamong desa.jpg" alt="Kumpulan Pamong Desa">
+                        <div class="carousel-3d-plaque">Kumpulan Pamong Desa</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('kantor kepala pos.jpg')">
+                        <img src="kantor kepala pos.jpg" alt="Kantor Kepala Pos">
+                        <div class="carousel-3d-plaque">Kantor Kepala Pos</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('kartinian smp1.jpg')">
+                        <img src="kartinian smp1.jpg" alt="Kartinian SMP 1">
+                        <div class="carousel-3d-plaque">Kartinian SMP 1</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('gedung muhammadiyah.jpg')">
+                        <img src="gedung muhammadiyah.jpg" alt="Gedung Muhammadiyah">
+                        <div class="carousel-3d-plaque">Gedung Muhammadiyah</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('tempat sepeda smp1.jpg')">
+                        <img src="tempat sepeda smp1.jpg" alt="Tempat Sepeda SMP 1">
+                        <div class="carousel-3d-plaque">Tempat Sepeda SMP 1</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('jembatan kali klawing.jpg')">
+                        <img src="jembatan kali klawing.jpg" alt="Jembatan Kali Klawing">
+                        <div class="carousel-3d-plaque">Jembatan Kali Klawing</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('kantor asisten residen purbalingga.jpg')">
+                        <img src="kantor asisten residen purbalingga.jpg" alt="Kantor Asisten Residen Purbalingga">
+                        <div class="carousel-3d-plaque">Kantor Asisten Residen Purbalingga</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('kandang kuda gedung asisten residen purbalingga.jpg')">
+                        <img src="kandang kuda gedung asisten residen purbalingga.jpg" alt="Kandang Kuda Gedung Asisten Residen Purbalingga">
+                        <div class="carousel-3d-plaque">Kandang Kuda Gedung Asisten Residen</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('peresmian terminal purbalingga.jpg')">
+                        <img src="peresmian terminal purbalingga.jpg" alt="Peresmian Terminal Purbalingga">
+                        <div class="carousel-3d-plaque">Peresmian Terminal Purbalingga</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('dua bringin di alun alun purbalingga.jpg')">
+                        <img src="dua bringin di alun alun purbalingga.jpg" alt="Dua Bringin di Alun-Alun Purbalingga">
+                        <div class="carousel-3d-plaque">Dua Bringin di Alun-Alun Purbalingga</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('pedesaan kaligondang tahun 1880.jpg')">
+                        <img src="pedesaan kaligondang tahun 1880.jpg" alt="Pedesaan Kaligondang Tahun 1880">
+                        <div class="carousel-3d-plaque">Pedesaan Kaligondang Tahun 1880</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('menner Dusseldrop dan pohon kenari di Purbalingga tahun 1930.png')">
+                        <img src="menner Dusseldrop dan pohon kenari di Purbalingga tahun 1930.png" alt="Menner Dusseldrop dan Pohon Kenari 1930">
+                        <div class="carousel-3d-plaque">Menner Dusseldrop & Pohon Kenari 1930</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('menner Dusseldrop mengunjungi jembatan sungai klawing 1930.png')">
+                        <img src="menner Dusseldrop mengunjungi jembatan sungai klawing 1930.png" alt="Menner Dusseldrop Mengunjungi Jembatan Sungai Klawing 1930">
+                        <div class="carousel-3d-plaque">Menner Dusseldrop di Jembatan Klawing 1930</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('jalanan purbalingga 1930.png')">
+                        <img src="jalanan purbalingga 1930.png" alt="Jalanan Purbalingga 1930">
+                        <div class="carousel-3d-plaque">Jalanan Purbalingga 1930</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('Menner Dusseldrop menonton ebeg.png')">
+                        <img src="Menner Dusseldrop menonton ebeg.png" alt="Menner Dusseldrop Menonton Ebeg">
+                        <div class="carousel-3d-plaque">Menner Dusseldrop Menonton Ebeg</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('pemandian bojongsari (sekarang owabong).jpg')">
+                        <img src="pemandian bojongsari (sekarang owabong).jpg" alt="Pemandian Bojongsari (Sekarang Owabong)">
+                        <div class="carousel-3d-plaque">Pemandian Bojongsari (Owabong)</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('jurnalis berbincang dengan Mayor Hall dan Kapten Bohle di Wirasaba (2 Sep 1949).jpg')">
+                        <img src="jurnalis berbincang dengan Mayor Hall dan Kapten Bohle di Wirasaba (2 Sep 1949).jpg" alt="Jurnalis Berbincang di Wirasaba 1949">
+                        <div class="carousel-3d-plaque">Jurnalis & Militer di Wirasaba (1949)</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('gencatan senjata di mandiraja purbalingga.jpg')">
+                        <img src="gencatan senjata di mandiraja purbalingga.jpg" alt="Gencatan Senjata di Mandiraja">
+                        <div class="carousel-3d-plaque">Gencatan Senjata di Mandiraja</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('gencatan senjata di mandiraja purbalingga 2.jpg')">
+                        <img src="gencatan senjata di mandiraja purbalingga 2.jpg" alt="Gencatan Senjata di Mandiraja 2">
+                        <div class="carousel-3d-plaque">Gencatan Senjata di Mandiraja 2</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('patroli tentara belanda di purbalingga.jpg')">
+                        <img src="patroli tentara belanda di purbalingga.jpg" alt="Patroli Tentara Belanda di Purbalingga">
+                        <div class="carousel-3d-plaque">Patroli Tentara Belanda di Purbalingga</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('patroli belanda di bobotsari purbalingga 1947.jpg')">
+                        <img src="patroli belanda di bobotsari purbalingga 1947.jpg" alt="Patroli Belanda di Bobotsari 1947">
+                        <div class="carousel-3d-plaque">Patroli Belanda di Bobotsari 1947</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('iring iringan mobil militer di purbalingga pada masa agresi militer.jpg')">
+                        <img src="iring iringan mobil militer di purbalingga pada masa agresi militer.jpg" alt="Iring-iringan Mobil Militer">
+                        <div class="carousel-3d-plaque">Iring-iringan Mobil Militer</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('tentara belanda sedang bertempur di bobotsari purbalingga.jpg')">
+                        <img src="tentara belanda sedang bertempur di bobotsari purbalingga.jpg" alt="Tentara Belanda Bertempur di Bobotsari">
+                        <div class="carousel-3d-plaque">Tentara Belanda Bertempur di Bobotsari</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('tentara belanda siap siaga menghadapi pihak republik di bobotsari purbalingga.jpg')">
+                        <img src="tentara belanda siap siaga menghadapi pihak republik di bobotsari purbalingga.jpg" alt="Tentara Belanda Siap Siaga di Bobotsari">
+                        <div class="carousel-3d-plaque">Tentara Belanda Siap Siaga di Bobotsari</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('pembakaran rumah oleh tentara Belanda di bobotsari purbalingga saat agresi militer.jpg')">
+                        <img src="pembakaran rumah oleh tentara Belanda di bobotsari purbalingga saat agresi militer.jpg" alt="Pembakaran Rumah di Bobotsari">
+                        <div class="carousel-3d-plaque">Pembakaran Rumah di Bobotsari</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('tentara belanda di markas militer purbalingga utara.jpg')">
+                        <img src="tentara belanda di markas militer purbalingga utara.jpg" alt="Tentara Belanda di Markas Purbalingga Utara">
+                        <div class="carousel-3d-plaque">Markas Militer Purbalingga Utara</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('tentara belanda di markas militer purbalingga utara.jpeg')">
+                        <img src="tentara belanda di markas militer purbalingga utara.jpeg" alt="Tentara Belanda di Markas Purbalingga Utara JPEG">
+                        <div class="carousel-3d-plaque">Markas Militer Purbalingga Utara 2</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('Aryo sugondo bupati terakhir purbalingga dari wangsa Dipoyudan.jpg')">
+                        <img src="Aryo sugondo bupati terakhir purbalingga dari wangsa Dipoyudan.jpg" alt="Aryo Sugondo Bupati Terakhir Dipoyudan">
+                        <div class="carousel-3d-plaque">Aryo Sugondo (Bupati Purbalingga)</div>
+                    </div>
+                    <div class="carousel-3d-card lampau-card" onclick="openFlyModal('foto dukungan bola di purbalingga zaman dulu.jpg')">
+                        <img src="foto dukungan bola di purbalingga zaman dulu.jpg" alt="Foto Dukungan Bola Zaman Dulu">
+                        <div class="carousel-3d-plaque">Dukungan Sepak Bola Zaman Dulu</div>
                     </div>
                 </div>
                 <button class="carousel-nav-btn carousel-next" onclick="slideCarousel('lampauCarousel', 1)">❯</button>
             </div>
         </div>
-
         <!-- 6. Pusat Referensi Wikipedia -->
         <div class="section-card">
             <h2 class="section-title">Pusat Referensi & Literatur</h2>
@@ -802,7 +844,6 @@
             </div>
         </div>
     </div>
-
     <!-- Modal Detail Kecamatan -->
     <div id="districtModal" class="modal-overlay">
         <div class="modal-content">
@@ -834,23 +875,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Fly-To-Screen -->
+    <!-- Modal Fly-To-Screen (Hanya Foto) -->
     <div id="flyLightboxModal" class="fly-lightbox-overlay" onclick="closeFlyModal(event)">
         <div class="fly-lightbox-box">
             <div class="fly-lightbox-img-wrap">
                 <img id="flyModalImg" src="" alt="Foto Diperbesar">
             </div>
-            <div class="fly-lightbox-info">
-                <div>
-                    <h3 id="flyModalTitle">Judul</h3>
-                    <p id="flyModalDesc">Deskripsi informasi lengkap akan muncul di sini.</p>
-                </div>
-                <button onclick="closeFlyModalDirect()" class="district-btn" style="background: var(--primary); color: var(--secondary); border-color: var(--secondary); text-align: center; margin-top: 20px; width: 100%;">Tutup & Kembali</button>
-            </div>
+            <button onclick="closeFlyModalDirect()" class="district-btn" style="background: var(--primary); color: var(--secondary); border-color: var(--secondary); text-align: center; margin-top: 15px; width: 100%;">Tutup & Kembali</button>
         </div>
     </div>
-
     <!-- CONTROL PANEL -->
     <div class="control-panel-container">
         <button class="control-toggle-btn" onclick="toggleControlMenu()">
@@ -861,18 +894,15 @@
             <button class="menu-item-btn" id="readingMenuBtn" onclick="toggleReadingMode()">📖 Mode Baca: Off</button>
         </div>
     </div>
-
     <!-- MUSIC WIDGET -->
     <div class="music-widget">
         <span>🪕 Gamelan Jawa</span>
         <audio id="gamelanAudio" loop src="gending temanten adat jawa kebo giro.mp3"></audio>
         <button id="gamelanBtn" class="music-btn" onclick="toggleGamelan()">▶️ Bunyikan</button>
     </div>
-
     <footer>
         <p>&copy; 2026 Website Edukasi & Pelestarian Kebudayaan Purbalingga | Jawa Banyumasan</p>
     </footer>
-
     <!-- LEAFLET JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -952,7 +982,6 @@
                 </svg>`
             }
         ];
-
         function initConstellations() {
             const boxes = [
                 { box: document.getElementById('constellationBox1'), label: document.getElementById('constellationLabel1') },
@@ -993,7 +1022,6 @@
             initConstellations();
             updateLiveClock();
         }
-
         function slideCarousel(stageId, direction) {
             const state = carouselStates[stageId];
             if (!state) return;
@@ -1002,7 +1030,6 @@
             else if (state.currentIndex >= state.cards.length) state.currentIndex = 0;
             updateCarouselView(stageId);
         }
-
         function updateCarouselView(stageId) {
             const state = carouselStates[stageId];
             const total = state.cards.length;
@@ -1016,17 +1043,13 @@
             });
         }
         
-        function openFlyModal(imgSrc, title, desc) {
+        function openFlyModal(imgSrc) {
             document.getElementById('flyModalImg').src = imgSrc;
-            document.getElementById('flyModalTitle').innerText = title;
-            document.getElementById('flyModalDesc').innerText = desc;
             document.getElementById('flyLightboxModal').classList.add('active');
         }
-
         function closeFlyModal(event) {
             if (event.target.id === 'flyLightboxModal') document.getElementById('flyLightboxModal').classList.remove('active');
         }
-
         function closeFlyModalDirect() {
             document.getElementById('flyLightboxModal').classList.remove('active');
         }
@@ -1059,7 +1082,6 @@
                 maxZoom: 19,
                 attribution: '&copy; OpenStreetMap'
             }).addTo(leafletMap);
-
             for (const [namaKecamatan, data] of Object.entries(dataKecamatan)) {
                 if (data.lat && data.lon) {
                     const marker = L.marker([data.lat, data.lon]).addTo(leafletMap);
@@ -1079,7 +1101,6 @@
                 }
             }
         }
-
         window.addEventListener('DOMContentLoaded', () => {
             init3DCarousels();
             initLeafletMap(); 
@@ -1160,7 +1181,6 @@
         function toggleControlMenu() { 
             document.getElementById('controlMenu').classList.toggle('active'); 
         }
-
         window.addEventListener('click', function(e) {
             const container = document.querySelector('.control-panel-container');
             if (container && !container.contains(e.target)) {
